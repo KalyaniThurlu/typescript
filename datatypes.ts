@@ -105,19 +105,44 @@ var myobj:{Name:string,price:number}[]=[
 console.log(myobj)
 
 
+var data:Map<number,any>=new Map()
+data.set(1,"latha")
+data.set(1,"Geetha")
+data.set(3,"suma")
+
+data.has(3)
+console.log(data)
+data.delete(2)
 
 
 
+let dada:Map<number,any>=new Map()
+dada.set(1,"lastName")
+
+let value1=data.get(1)
+
+
+console.log("value for key :",value1)
 
 
 
+var password:string="aDmin123";
+var pattern=/(?=.*[A-Z]\w{4,14})/
+if(password.match(pattern)){
+    console.log("verified")
+
+}else{
+    console.log("password must 4 to 15 uppercase one letter")
+}
+
+var mfd : Date= new Date();
+console.log(mfd)
 
 
 
-
-
-
-
+var now :Date = new Date();
+var dayOfWeek:number =now.getHours()
+console.log(dayOfWeek)
 
 
 

@@ -1,3 +1,4 @@
+"use strict";
 var firstName = "suma";
 console.log(firstName);
 var numbers = 20;
@@ -45,10 +46,10 @@ var product = {
     Rating: 4.5
 };
 if (product.Rating) {
-    console.log("Name=".concat(product.Name, "\nprice=").concat(product.price, "\nStock=").concat(product.Stock, "\nRating=").concat(product.Rating));
+    console.log(`Name=${product.Name}\nprice=${product.price}\nStock=${product.Stock}\nRating=${product.Rating}`);
 }
 else {
-    console.log("Name=".concat(product.Name, "\nprice=").concat(product.price, "\nStock=").concat(product.Stock));
+    console.log(`Name=${product.Name}\nprice=${product.price}\nStock=${product.Stock}`);
 }
 // //properties&methods
 var exxproduct = {
@@ -59,7 +60,7 @@ var exxproduct = {
         return this.qty * this.price;
     },
     print: function () {
-        console.log("Name=".concat(this.Name, "\nprice=").concat(this.price, "\nqty=").concat(this.qty, "\nTotal=").concat(this.Total()));
+        console.log(`Name=${this.Name}\nprice=${this.price}\nqty=${this.qty}\nTotal=${this.Total()}`);
     }
 };
 // // Calling the print method
@@ -75,7 +76,7 @@ var myproduct = {
         return this.Qty * this.Price;
     },
     Print: function () {
-        console.log("Name=".concat(this.Name, "\nPrice=").concat(this.Price, "\nQty=").concat(this.Qty, "\nTotal=").concat(this.Total()));
+        console.log(`Name=${this.Name}\nPrice=${this.Price}\nQty=${this.Qty}\nTotal=${this.Total()}`);
     }
 };
 myproduct.Print();
@@ -84,3 +85,27 @@ var myobj = [
     { Name: "Rama", price: 2 }
 ];
 console.log(myobj);
+var data = new Map();
+data.set(1, "latha");
+data.set(1, "Geetha");
+data.set(3, "suma");
+data.has(3);
+console.log(data);
+data.delete(2);
+let dada = new Map();
+dada.set(1, "lastName");
+let value1 = data.get(1);
+console.log("value for key :", value1);
+var password = "aDmin123";
+var pattern = /(?=.*[A-Z]\w{4,14})/;
+if (password.match(pattern)) {
+    console.log("verified");
+}
+else {
+    console.log("password must 4 to 15 uppercase one letter");
+}
+var mfd = new Date();
+console.log(mfd);
+var now = new Date();
+var dayOfWeek = now.getHours();
+console.log(dayOfWeek);
