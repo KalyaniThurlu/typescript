@@ -1,4 +1,3 @@
-"use strict";
 var firstName = "suma";
 console.log(firstName);
 var numbers = 20;
@@ -46,10 +45,10 @@ var product = {
     Rating: 4.5
 };
 if (product.Rating) {
-    console.log(`Name=${product.Name}\nprice=${product.price}\nStock=${product.Stock}\nRating=${product.Rating}`);
+    console.log("Name=".concat(product.Name, "\nprice=").concat(product.price, "\nStock=").concat(product.Stock, "\nRating=").concat(product.Rating));
 }
 else {
-    console.log(`Name=${product.Name}\nprice=${product.price}\nStock=${product.Stock}`);
+    console.log("Name=".concat(product.Name, "\nprice=").concat(product.price, "\nStock=").concat(product.Stock));
 }
 // //properties&methods
 var exxproduct = {
@@ -60,10 +59,9 @@ var exxproduct = {
         return this.qty * this.price;
     },
     print: function () {
-        console.log(`Name=${this.Name}\nprice=${this.price}\nqty=${this.qty}\nTotal=${this.Total()}`);
+        console.log("Name=".concat(this.Name, "\nprice=").concat(this.price, "\nqty=").concat(this.qty, "\nTotal=").concat(this.Total()));
     }
 };
-// // Calling the print method
 exxproduct.print();
 //Array of object
 var myproduct = {
@@ -76,7 +74,7 @@ var myproduct = {
         return this.Qty * this.Price;
     },
     Print: function () {
-        console.log(`Name=${this.Name}\nPrice=${this.Price}\nQty=${this.Qty}\nTotal=${this.Total()}`);
+        console.log("Name=".concat(this.Name, "\nPrice=").concat(this.Price, "\nQty=").concat(this.Qty, "\nTotal=").concat(this.Total()));
     }
 };
 myproduct.Print();
@@ -85,17 +83,6 @@ var myobj = [
     { Name: "Rama", price: 2 }
 ];
 console.log(myobj);
-var data = new Map();
-data.set(1, "latha");
-data.set(1, "Geetha");
-data.set(3, "suma");
-data.has(3);
-console.log(data);
-data.delete(2);
-let dada = new Map();
-dada.set(1, "lastName");
-let value1 = data.get(1);
-console.log("value for key :", value1);
 var password = "aDmin123";
 var pattern = /(?=.*[A-Z]\w{4,14})/;
 if (password.match(pattern)) {
@@ -109,3 +96,57 @@ console.log(mfd);
 var now = new Date();
 var dayOfWeek = now.getHours();
 console.log(dayOfWeek);
+var Product = {
+    Id: 1,
+    Name: "mobile",
+    price: 2000,
+    qty: 2,
+    Total: function () {
+        return this.price * this.qty;
+    },
+    print: function () {
+        console.log("Id=".concat(this.Id, "\nName=").concat(this.Name, "\nprice=").concat(this.price, "\nqty=").concat(this.qty, "\nTotal=").concat(this.Total()));
+    }
+};
+Product.print();
+var products = {
+    Name: "TV",
+    Price: 35000.44,
+    Qty: 2,
+};
+products.Qty = 3;
+var productss = {
+    Id: 3,
+    Name: "jewelry",
+    price: 2000,
+    Qty: 2,
+    VendorId: 100,
+    VendorName: "Reliance Digital",
+    CategoryName: "Electronics",
+    Total: function () {
+        return this.price * this.Qty;
+    },
+    print: function () {
+        console.log("Id=".concat(this.Id, "\nName=").concat(this.Name, "\nprice=").concat(this.price, "\nQty=").concat(this.Qty, "\nTotal=").concat(this.Total(), "\nVendorId=").concat(this.VendorId, "\nVendorName=").concat(this.VendorName, "\nCategoryName=").concat(this.CategoryName));
+    }
+};
+productss.print();
+//===Static & Non-Static
+var Demo = /** @class */ (function () {
+    function Demo() {
+        this.n = 0;
+        Demo.s = Demo.s + 1;
+        this.n = this.n + 1;
+    }
+    Demo.prototype.print = function () {
+        console.log("s=".concat(Demo.s, "\nn=").concat(this.n));
+    };
+    Demo.s = 0;
+    return Demo;
+}());
+var obj1 = new Demo();
+obj1.print();
+var obj2 = new Demo();
+obj2.print();
+var obj3 = new Demo();
+obj3.print();

@@ -76,7 +76,7 @@
          console.log(`Name=${this.Name}\nprice=${this.price}\nqty=${this.qty}\nTotal=${this.Total()}`);
      } }
 
-// // Calling the print method
+
 exxproduct.print ();
 //Array of object
 
@@ -105,24 +105,6 @@ var myobj:{Name:string,price:number}[]=[
 console.log(myobj)
 
 
-var data:Map<number,any>=new Map()
-data.set(1,"latha")
-data.set(1,"Geetha")
-data.set(3,"suma")
-
-data.has(3)
-console.log(data)
-data.delete(2)
-
-
-
-let dada:Map<number,any>=new Map()
-dada.set(1,"lastName")
-
-let value1=data.get(1)
-
-
-console.log("value for key :",value1)
 
 
 
@@ -143,6 +125,31 @@ console.log(mfd)
 var now :Date = new Date();
 var dayOfWeek:number =now.getHours()
 console.log(dayOfWeek)
+//==interface=====
+
+interface Iproduct {
+    Id: number;
+    Name: string;
+    price: number;
+    qty: number;
+    Total(): number;
+    print(): void;
+}
+
+var Product: Iproduct = {
+    Id: 1,
+    Name: "mobile",
+    price: 2000,
+    qty: 2,
+    Total: function () {
+        return this.price * this.qty;
+    },
+    print: function () {
+        console.log(`Id=${this.Id}\nName=${this.Name}\nprice=${this.price}\nqty=${this.qty}\nTotal=${this.Total()}`);
+    }
+}
+
+Product.print();
 
 
 
@@ -151,41 +158,75 @@ console.log(dayOfWeek)
 
 
 
+interface  IProducts
+{
+ Name:string;
+ readonly Price:number;
+ Qty:number;
+}
 
+var products : IProducts = {
+ Name : "TV",
+     Price: 35000.44,
+ Qty:2,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-		
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
+ 		
+ 
+    }
+    products.Qty = 3;
+    //===multiple inheritance===
+    
+    interface IVendor {
+        VendorId: number;
+        VendorName: string;
+    }
+    
+    interface ICategory {
+        CategoryName: string;
+    }
+    
+    interface IProductss extends IVendor, ICategory {
+        Id: number;
+        Name: string;
+        readonly price: number;
+        Qty: number;
+        Total(): number;
+        print(): void;
+    }
+    
+    const productss: IProductss = {
+        Id: 3,
+        Name: "jewelry",
+        price: 2000,
+        Qty: 2,
+        VendorId: 100,
+        VendorName: "Reliance Digital",
+        CategoryName: "Electronics",
+        Total() {
+            return this.price * this.Qty;
+        },
+        print() {
+            console.log(`Id=${this.Id}\nName=${this.Name}\nprice=${this.price}\nQty=${this.Qty}\nTotal=${this.Total()}\nVendorId=${this.VendorId}\nVendorName=${this.VendorName}\nCategoryName=${this.CategoryName}`);
+        }
+    };
+    
+    productss.print();
+    
+    //===Static & Non-Static
+    class Demo{
+        static s =0;
+        n =0
+        constructor(){
+            Demo.s=Demo.s+1;
+            this.n=this.n+1
+        }
+        print(){
+            console.log(`s=${Demo.s}\nn=${this.n}`)
+        }
+    }
+    let obj1=new Demo()
+    obj1.print();
+    let obj2=new Demo()
+    obj2.print()
+    let obj3 =new Demo()
+    obj3.print()
