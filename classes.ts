@@ -70,3 +70,5 @@ class Productss extends ProductsTemplate {
 
 let product = new Productss();
 product.Print();
+
+

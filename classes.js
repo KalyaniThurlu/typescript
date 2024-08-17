@@ -57,3 +57,24 @@ var Productss = /** @class */ (function (_super) {
 }(ProductsTemplate));
 var product = new Productss();
 product.Print();
+var StatusCodesss;
+(function (StatusCodesss) {
+    StatusCodesss[StatusCodesss["Method"] = 0] = "Method";
+    StatusCodesss[StatusCodesss["OK"] = 200] = "OK";
+    StatusCodesss[StatusCodesss["Timeout"] = 201] = "Timeout";
+    StatusCodesss[StatusCodesss["NotFound"] = 404] = "NotFound";
+})(StatusCodesss || (StatusCodesss = {}));
+console.log(StatusCodesss.Method);
+var StatusCodes1;
+(function (StatusCodes1) {
+    StatusCodes1[StatusCodes1["A"] = 20] = "A";
+    StatusCodes1[StatusCodes1["B"] = 30] = "B";
+    StatusCodes1[StatusCodes1["C"] = 50] = "C";
+})(StatusCodes1 || (StatusCodes1 = {}));
+console.log("Addition=".concat(StatusCodes1.C));
+var StatusCodes2;
+(function (StatusCodes2) {
+    StatusCodes2[StatusCodes2["A"] = 2] = "A";
+    StatusCodes2["NotFound"] = "it is not found";
+})(StatusCodes2 || (StatusCodes2 = {}));
+console.log(StatusCodes2.NotFound, StatusCodes2[2]);
