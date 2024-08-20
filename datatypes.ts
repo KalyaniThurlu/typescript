@@ -36,7 +36,9 @@
  var Exvalue:(string|number|boolean)[]=[10,"a",20,true]
  console.log(Exvalue)
 //==object====
- var obj:{Name:string,id:number}={
+ var obj:{
+     Print(): unknown;Name:string,id:number
+}={
      Name:"preethi",
      id:2,
  }
